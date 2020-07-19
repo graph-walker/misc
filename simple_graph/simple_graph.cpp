@@ -2,14 +2,16 @@
 #include <map>
 #include <iostream>
 
+// for illustrative purposes
 // simple, undirected, unweighted, graph
+// more accurately this is an 'adjacency matrix' maker, since the graph is already present in the input map
 
 struct Graph
 {
 	int num_vertices_{ 0 };
 	std::map<int, std::vector<int>> vertex_connections_;
 	std::vector<std::vector<int>>  adjacency_matrix_;
-	Graph(int num_vertices, std::map<int, std::vector<int>> connections) :
+	Graph(int num_vertices, const std::map<int, std::vector<int>>& connections) :
 		num_vertices_{ num_vertices }, vertex_connections_{ connections }
 	{
 		for (int i = 0; i< num_vertices; i++)
